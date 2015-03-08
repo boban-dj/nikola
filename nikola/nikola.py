@@ -1521,6 +1521,7 @@ class Nikola(object):
         task = {
             'name': os.path.normpath(output_name),
             'targets': [output_name],
+            'task_dep': ['render_posts'],
             'file_dep': deps,
             'actions': [(self.render_template, [template_name, output_name,
                                                 context])],
